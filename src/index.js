@@ -39,71 +39,49 @@ const siteContent = { // DO NOT CHANGE THIS OBJECT
   },
 };
 
-console.log('project wired!')
 
-const queryNav = document.querySelector("nav");
-const queryCTA = document.querySelector(".cta");
-const queryMainContent = document.querySelector(".main-content");
-const contact = document.querySelector(".contact");
-const queryFooter = document.querySelector("footer");
+
+
+const contact = document.querySelector("section.contact");
+const queryFooter = document.querySelector("footer a");
 const queryImages = document.querySelector("images");
 
 const logoImg = document.querySelector("#logo-img");
+logoImg.src = siteContent.images['logo-img']
 const ctaImg = document.querySelector('#cta-img');
+ctaImg.src = siteContent.images['cta-img']
 const middleImg = document.querySelector("#middle-img");
+middleImg.src = siteContent.images['accent-img']
+
+
 const links = document.querySelectorAll("nav a");
-
-const feature = queryMainContent.querySelector("div:nth-of-type(1) h4");
-const featureContent = queryMainContent.querySelector("div:nth-of-type(1) p");
-const about = queryMainContent.querySelector("div:nth-of-type(2) h4");
-const aboutContent = queryMainContent.querySelector("div:nth-of-type(2) p");
-const services = queryMainContent.querySelector("div:nth-of-type(3) h4");
-const servicesContent = queryMainContent.querySelector("div:nth-of-type(3) p");
-const product = queryMainContent.querySelector("div:nth-of-type(4) h4");
-const productContent = queryMainContent.querySelector("div:nth-of-type(4) p");
-const vision = queryMainContent.querySelector("div:nth-of-type(5) h4")
-const visionContent = queryMainContent.querySelector("div:nth-of-type(5) p")
+const linksTexts = Object.values(siteContent.nav);
+links.forEach((link, idx) => {
+  link.textContent = linksTexts[idx]
+  link.classList.add('italic')
+})
 
 
-logoImg.setAttribute("src", "http://localhost:9000/img/logo.png");
-ctaImg.setAttribute("src", "http://localhost:9000/img/cta.png");
-middleImg.setAttribute("src", "http://localhost:9000/img/accent.png");
+const topContent = document.querySelector(".top-content")
+topContent.children[0].children[0].textContent = siteContent['main-content']['features-h4']
+topContent.children[0].children[1].textContent = siteContent['main-content']['features-content']
+topContent.children[1].children[0].textContent = siteContent['main-content']['about-h4']
+topContent.children[1].children[1].textContent = siteContent['main-content']['about-content']
+const botContent = document.querySelector(".bottom-content")
+botContent.children[0].children[0].textContent = siteContent['main-content']['services-h4']
+botContent.children[0].children[1].textContent = siteContent['main-content']['services-content']
+botContent.children[1].children[0].textContent = siteContent['main-content']['product-h4']
+botContent.children[1].children[1].textContent = siteContent['main-content']['product-content']
+botContent.children[2].children[0].textContent = siteContent['main-content']['vision-h4']
+botContent.children[2].children[1].textContent = siteContent['main-content']['vision-content']
 
-queryNav.style.fontStyle = "Italic"
-links[0].textContent = "Services";
-links[1].textContent = "Product";
-links[2].textContent = "Vision";
-links[3].textContent = "Features";
-links[4].textContent = "About";
-links[5].textContent = "Contact";
+contact.querySelector('h4').textContent = siteContent.contact['contact-h4']
+contact.children[1].textContent = siteContent.contact ['address']
+contact.children[2].textContent = siteContent.contact ['phone']
+contact.children[3].textContent = siteContent.contact ['email']
 
-feature.textContent = "Features";
-featureContent.textContent = "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
-about.textContent = "About"
-aboutContent.textContent = "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
-services.textContent = "Services"
-servicesContent.textContent = "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
-product.textContent = "Product"
-productContent.textContent = "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
-vision.textContent = "Vision"
-visionContent.textContent = "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
+document.querySelector('.cta .cta-text h1').textContent = siteContent.cta.h1
+document.querySelector('.cta .cta-text button').textContent = siteContent.cta.button
 
-contact.textContent = "Contact"
-contact.style.fontStyle = "bold"
-const contactAddress = document.createElement("p");
-document.querySelector(".contact").appendChild(contactAddress);
-contactAddress.textContent = "123 Way 456 Street Somewhere, USA"
-const contactPhone = document.createElement("p");
-document.querySelector(".contact").appendChild(contactPhone);
-contactPhone.textContent = "1 (888) 888-8888"
-const contactEmail = document.createElement("p");
-document.querySelector(".contact").appendChild(contactEmail);
-contactEmail.textContent = "sales@greatidea.io"
-
-const ctaHeader = queryCTA.querySelector("h1")
-const ctaButton = queryCTA.querySelector("button")
-ctaHeader.textContent = "DOM Is Awesome"
-ctaButton.textContent = "Get Started"
-
-queryFooter.textContent = "Copyright Great Idea! 2021"
-queryFooter.style.fontStyle = "bold"
+queryFooter.textContent = siteContent.footer.copyright;
+queryFooter.classList.add('bold')
