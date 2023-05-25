@@ -40,3 +40,39 @@ const siteContent = { // DO NOT CHANGE THIS OBJECT
 };
 
 console.log('project wired!')
+
+const queryNav = document.querySelector("#nav");
+const queryCTA = document.querySelector(".cta");
+const queryMainContent = document.querySelector(".main-content");
+const queryContact = document.querySelector(".contact");
+const queryFooter = document.querySelector("footer");
+const queryImages = document.querySelector("images");
+
+const logoImg = document.querySelector("#logo-img");
+const ctaImg = document.querySelector('#cta-img');
+const middleImg = document.querySelector("#middle-img");
+const links = document.querySelectorAll("nav a");
+const feature = queryMainContent.querySelector("h4:nth-of-type(1)");
+const featureContent = queryMainContent.querySelector("p:nth-of-type(1)");
+const about = queryMainContent.querySelector("h4:nth-of-type(2)");
+
+
+logoImg.setAttribute("src", "http://localhost:9000/img/logo.png");
+ctaImg.setAttribute("src", "http://localhost:9000/img/cta.png");
+middleImg.setAttribute("src", "http://localhost:9000/img/accent.png");
+
+links.style.font
+
+links[0].textContent = "Services";
+links[1].textContent = "Product";
+links[2].textContent = "Vision";
+links[3].textContent = "Features";
+links[4].textContent = "About";
+links[5].textContent = "Contact";
+
+feature.textContent = "Features";
+featureContent.textContent = "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
+about.textContent = "About"
+
+
+
